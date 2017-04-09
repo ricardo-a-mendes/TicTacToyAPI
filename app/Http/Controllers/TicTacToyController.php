@@ -16,7 +16,7 @@ class TicTacToyController extends Controller
         $matrix = [
             '11' => TicTacToy::PLAYER_1, '12' => '', '13' => '',
             '21' => '', '22' => 'X', '23' => '',
-            '31' => '', '32' => '', '33' => 'o',
+            '31' => '', '32' => '', '33' => 'X',
         ];
 
         $gameResult = $ttt->checkGame($matrix);

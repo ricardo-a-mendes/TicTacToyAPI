@@ -13,3 +13,14 @@
 
 Route::post('/', 'TicTacToyController@index');
 Route::get('/', 'TicTacToyController@index');
+
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
+Route::post('register_game', 'GameController@register');
+
+//API Group
+Route::group(['prefix' => 'api', 'middleware' => 'oauth'], function () {
+    Route::post('check_winner', 'TicTacToyController@index');
+});
